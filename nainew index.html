@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nainai Nail 預約資訊</title>
+    <!-- 引入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入 Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        /* 隱藏捲軸樣式 */
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* 淡入動畫 */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 0.4s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen w-full flex items-center justify-center font-sans p-0 md:p-4 bg-[#F8DEE5]">
+
+    <!-- 背景裝飾 -->
+    <div class="fixed inset-0 z-0 pointer-events-none" 
+         style="background-color: #F8DEE5; background-image: radial-gradient(#EBB3BE60 3px, transparent 3px); background-size: 24px 24px; background-position: 0 0, 12px 12px;">
+    </div>
+
+    <!-- 主卡片 -->
+    <div class="w-full md:max-w-lg h-screen md:h-[800px] rounded-none md:rounded-[40px] shadow-2xl relative z-10 overflow-hidden border-0 md:border-8 border-white flex flex-col bg-[#FCECF0]">
+        
+        <!-- Header -->
+        <div class="text-center py-6 text-white rounded-b-3xl shadow-md z-20 flex-shrink-0 bg-[#D48594]">
+            <h1 class="text-2xl font-bold tracking-widest flex items-center justify-center gap-2">
+                <i data-lucide="sparkles" class="w-5 h-5 text-yellow-200"></i>
+                nainai nail
+                <i data-lucide="sparkles" class="w-5 h-5 text-yellow-200"></i>
+            </h1>
+            <p class="text-sm opacity-90 mt-1">您的專屬美甲服務資訊</p>
+        </div>
+
+        <!-- Tabs -->
+        <div class="flex sticky top-0 z-30 shadow-sm border-b border-[#EBB3BE] bg-[#FCECF0]">
+            <button class="tab-btn flex-1 py-4 text-sm font-bold transition-all relative outline-none text-[#63464D] opacity-100 bg-white/30" data-target="tab-price">
+                價目表
+                <div class="tab-indicator absolute bottom-0 left-0 w-full h-1 bg-[#D48594]"></div>
+            </button>
+            <button class="tab-btn flex-1 py-4 text-sm font-bold transition-all relative outline-none text-[#63464D] opacity-60 hover:opacity-80 bg-transparent" data-target="tab-notice">
+                預約須知
+                <div class="tab-indicator absolute bottom-0 left-0 w-full h-1 bg-[#D48594] hidden"></div>
+            </button>
+        </div>
+
+        <!-- 內容區 -->
+        <div class="flex-1 overflow-y-auto p-5 scroll-smooth hide-scrollbar relative">
+            
+            <!-- 價目表 -->
+            <div id="tab-price" class="tab-content animate-fadeIn space-y-4 pb-10 block">
+                <div class="rounded-xl p-5 shadow-sm border border-[#EBB3BE] bg-white">
+                    <h3 class="font-bold border-b-2 border-dashed pb-2 mb-3 text-[#D48594]">💅 基礎美甲服務</h3>
+                    <ul class="text-sm space-y-2 pl-2 text-[#63464D]">
+                        <li class="border-l-4 pl-2 border-[#EBB3BE]">單色凝膠：900 元</li>
+                        <li class="border-l-4 pl-2 border-[#EBB3BE]">貓眼凝膠：1100 元</li>
+                        <li class="border-l-4 pl-2 border-[#EBB3BE]">漸層/法式/鏡面凝膠：1200 元</li>
+                        <li class="border-l-4 pl-2 border-[#EBB3BE]">跳一色凝膠：50 元</li>
+                    </ul>
+                </div>
+                
+                <div class="rounded-xl p-5 shadow-sm border border-[#EBB3BE] bg-white">
+                    <h3 class="font-bold border-b-2 border-dashed pb-2 mb-3 text-[#D48594]">✨ 造型設計</h3>
+                    <ul class="text-sm space-y-2 pl-2 text-[#63464D]">
+                        <li class="border-l-4 pl-2 border-[#EBB3BE]">造型款 A (簡約)：1200 元起</li>
+                        <li class="border-l-4 pl-2 border-[#EBB3BE]">造型款 B (華麗)：1700 元起</li>
+                        <li class="border-l-4 pl-2 border-[#EBB3BE]">客製造型(傳圖報價)：1200 元起</li>
+                    </ul>
+                </div>
+
+                <div class="rounded-xl p-5 shadow-sm border border-[#EBB3BE] bg-white">
+                    <h3 class="font-bold border-b-2 border-dashed pb-2 mb-3 text-[#D48594]">💅 其他設計</h3>
+                    <ul class="text-sm space-y-2 pl-2 text-[#63464D]">
+                        <li class="border-l-4 pl-2 border-[#EBB3BE]">暈染：每指 100 元起</li>
+                        <li class="border-l-4 pl-2 border-[#EBB3BE]">造型設計：每指 100 ~ 250 元起</li>
+                        <li class="border-l-4 pl-2 border-[#EBB3BE]">立體翻模：每個 150 元起</li>
+                        <li class="border-l-4 pl-2 border-[#EBB3BE]">手繪：每指 50 元起</li>
+                        <li class="border-l-4 pl-2 border-[#EBB3BE]">貼紙/飾品：每個 10 元起</li>
+                        <li class="border-l-4 pl-2 border-[#EBB3BE]">延甲服務：每指 100 元</li>
+                        <li class="border-l-4 pl-2 border-[#EBB3BE]">補甲服務：每指 100 元</li>
+                    </ul>
+                </div>
+
+                <div class="rounded-xl p-5 shadow-sm border border-[#EBB3BE] bg-white">
+                    <h3 class="font-bold border-b-2 border-dashed pb-2 mb-3 text-[#D48594]">💅 保養與卸甲服務</h3>
+                    <ul class="text-sm space-y-2 pl-2 text-[#63464D]">
+                        <li class="border-l-4 pl-2 border-[#EBB3BE]">基礎保養(手部/足部)：300/500 元</li>
+                        <li class="border-l-4 pl-2 border-[#EBB3BE]">卸甲加購基礎保養：150 元</li>
+                        <li class="border-l-4 pl-2 border-[#EBB3BE]">卸甲續做/不續做(本店)：150/400 元</li>
+                        <li class="border-l-4 pl-2 border-[#EBB3BE]">卸甲續做/不續做(他店)：300/600 元</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 預約須知 -->
+            <div id="tab-notice" class="tab-content animate-fadeIn space-y-4 pb-10 hidden">
+                <div class="rounded-xl p-5 shadow-sm border border-[#EBB3BE] bg-white">
+                    <h3 class="font-bold border-b-2 border-dashed pb-2 mb-3 text-[#D48594]">📋 預約注意事項</h3>
+                    <ul class="text-sm space-y-3 pl-2 leading-relaxed text-[#63464D]">
+                        <li class="border-l-4 pl-2 border-[#EBB3BE]">請提前三天預約，以便安排您的時段。</li>
+                        <li class="border-l-4 pl-2 border-[#EBB3BE]">預約後若需更改或取消，請於 24 小時前告知。</li>
+                        <li class="border-l-4 pl-2 border-[#EBB3BE]">不接受當天臨時取消，下次再約需預付訂金。</li>
+                        <li class="border-l-4 pl-2 border-[#EBB3BE]">遲到超過 15 分鐘，視同取消預約。</li>
+                        <li class="border-l-4 pl-2 border-[#EBB3BE]">請勿攜伴。</li>
+                        <li class="border-l-4 pl-2 border-[#EBB3BE]">尊重原創，作品皆無法 100% 複製，完美主義者請勿預約。</li>
+                        <li class="border-l-4 pl-2 border-[#EBB3BE]">私宅工作室，有貓貓店長[阿寶]出沒 🐱。</li>
+                        <li class="border-l-4 pl-2 border-[#EBB3BE]">施作前兩週請避免修剪指甲。</li>
+                        <li class="border-l-4 pl-2 border-[#EBB3BE]">僅提供現金、轉帳方式交易。</li>
+                    </ul>
+                </div>
+
+                <div class="rounded-xl p-5 shadow-sm border border-[#EBB3BE] bg-white">
+                    <h3 class="font-bold border-b-2 border-dashed pb-2 mb-3 text-[#D48594]">💬 客服與詢問</h3>
+                    <ul class="text-sm space-y-2 pl-2 text-[#63464D]">
+                        <li class="border-l-4 pl-2 border-[#EBB3BE]">對於款式或價格有疑問，歡迎私訊詢問。</li>
+                        <li class="border-l-4 pl-2 border-[#EBB3BE]">現場服務以當次預約項目為主，臨時加項需視情況安排。</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 底部裝飾 -->
+        <div class="h-4 w-full absolute bottom-0 opacity-50 z-20 pointer-events-none bg-[#D48594]"></div>
+
+    </div>
+
+    <script>
+        // 初始化 Lucide 圖標
+        lucide.createIcons();
+
+        // 頁籤切換邏輯
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetId = btn.getAttribute('data-target');
+
+                // 更新按鈕樣式
+                tabBtns.forEach(t => {
+                    t.classList.remove('opacity-100', 'bg-white/30');
+                    t.classList.add('opacity-60');
+                    t.querySelector('.tab-indicator').classList.add('hidden');
+                });
+                
+                // 標記當前選中的按鈕
+                btn.classList.add('opacity-100', 'bg-white/30');
+                btn.classList.remove('opacity-60');
+                btn.querySelector('.tab-indicator').classList.remove('hidden');
+
+                // 顯示對應的內容，隱藏其他內容
+                tabContents.forEach(content => {
+                    if (content.id === targetId) {
+                        content.classList.remove('hidden');
+                        content.classList.add('block');
+                        
+                        // 重新觸發淡入動畫
+                        content.style.animation = 'none';
+                        content.offsetHeight; /* 觸發重繪 */
+                        content.style.animation = null; 
+                    } else {
+                        content.classList.add('hidden');
+                        content.classList.remove('block');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
